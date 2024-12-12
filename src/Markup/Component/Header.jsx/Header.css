@@ -1,0 +1,193 @@
+/* Global Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar Header Styles */
+.header-container {
+  position: relative;
+}
+
+.header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);  /* Dark blue gradient */
+  color: #ecf0f1;  /* Light gray text for better contrast */
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hide the sidebar off-screen */
+  width: 300px;
+  height: 100%;
+  padding: 20px;
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+  border-right: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+}
+
+.header.header-show {
+  left: 0; /* Sidebar is visible */
+}
+
+/* Hamburger Menu (header-toggle) */
+.header .header-toggle {
+  color: var(--contrast-color, #fff);
+  background-color: var(--accent-color, #e74c3c);  /* Accent color like red or you can change */
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+/* Profile Image */
+.profile-img {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.profile-img-thumbnail {
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.sitename {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ecf0f1; /* Light color for better contrast */
+}
+
+/* Social Links Styling */
+.social-links {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-link {
+  color: #ecf0f1; /* Light color for better contrast */
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.social-link:hover {
+  color: #e74c3c;  /* Accent color for hover effect */
+}
+
+/* Navigation Menu */
+.navmenu {
+  padding: 0;
+  list-style: none;
+}
+
+.navmenu .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  color: #ecf0f1; /* Light color for better contrast */
+  text-decoration: none;
+}
+
+.navmenu .nav-item i {
+  margin-right: 10px;
+}
+
+.navmenu .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+li{
+  list-style: none;
+}
+
+/* Media Queries */
+
+/* Large screens (tablet and above) */
+@media (min-width: 768px) {
+  .header {
+    position: fixed;
+    left: 0; /* Sidebar is fixed */
+    width: 300px; /* Sidebar width */
+  }
+
+  .header .header-toggle {
+    display: none; /* Hide hamburger button on large screens */
+  }
+
+  /* Adjust main content when sidebar is visible */
+  .header ~ main, .header ~ #footer {
+    margin-left: 300px; /* Push content to the right */
+  }
+}
+
+/* Smaller screens (mobile) */
+@media (max-width: 767px) {
+  .header {
+    position: relative; /* Sidebar is not fixed on small screens */
+    width: 100%; /* Full width for the sidebar */
+  }
+
+  .header.header-show {
+    left: 0;
+  }
+
+  .header ~ main, .header ~ #footer {
+    margin-left: 0; /* No margin for small screens */
+  }
+
+  /* Hamburger Button */
+  .header .header-toggle {
+    display: block;
+  }
+}
+
+/* Very small screens (extra small) */
+@media (max-width: 480px) {
+  .sitename {
+    font-size: 18px; /* Smaller logo */
+  }
+
+  .profile-img-thumbnail {
+    width: 80px; /* Smaller profile image */
+  }
+
+  .navmenu .nav-item {
+    font-size: 14px; /* Smaller nav item font */
+    padding: 10px 5px;
+    list-style: none;
+  }
+  li{
+    list-style: none;
+  }
+
+  .navmenu .nav-item i {
+    font-size: 16px; /* Smaller icons */
+  }
+}
+.main {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-left: 180px;
+}
+@media only screen and (max-width: 600px) {
+  .main {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: 0px;
+    
+  }
+}
